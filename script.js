@@ -20,7 +20,7 @@ function viewDetail(no) {
     history.pushState({ view: 'detail', no: no }, '', '?no=' + no);
 
     // API 서버 주소로 변경 필수
-    fetch('https://100479.net/blog/003/view.php?no=' + no)
+    fetch('https://100479.net/blog2/view.php?no=' + no)
     .then(res => res.text())
     .then(html => {
         contentBody.innerHTML = html;
@@ -52,7 +52,7 @@ function loadData(page = 1) {
     if(document.getElementById('reg_all').checked) { formData.append('region[]', '전체'); }
 
     // API 서버 주소로 변경 필수 (현재 도메인과 다를 경우 전체 URL 입력)
-    fetch('https://100479.net/blog/003/index.php', { method: 'POST', body: formData })
+    fetch('https://100479.net/blog2/index.php', { method: 'POST', body: formData })
     .then(res => res.text())
     .then(html => {
         resultArea.innerHTML = html;
@@ -84,3 +84,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
